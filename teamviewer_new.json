@@ -1,0 +1,94 @@
+{
+  "title": "Shift 切换输入法",
+  "rules": [
+    {
+      "description": "Change left_shift to left_shift in TeamViewer",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.teamviewer.TeamViewer$"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "left_shift",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change left_shift to F17 when used alone, excluding TeamViewer",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com.teamviewer.TeamViewer$"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "left_shift",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "f17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change right_shift to F17 when used alone",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_shift",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_shift"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "f17"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+    "title": "Swap Left Control/Command only in Remote",
+    "rules": [
+        {
+            "description": "Remote Right Command to Control",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_command"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_control"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.macos"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Remote Left Command to Control",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_command"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.macos"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Remote Left Control to Command",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.macos"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Remote left_shift to left_shift",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_shift"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.macos"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

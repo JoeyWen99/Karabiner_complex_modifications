@@ -1,0 +1,28 @@
+{
+    "title": "F6 to cmd shift f",
+    "rules": [
+        {
+            "description": "F6 to cmd shift f",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "f6"
+                    },
+                    "to": [
+                        {
+                            "repeat": false,
+                            "modifiers": [
+                                "left_gui",
+                                "left_shift"
+                            ],
+                            "key_code": "f",
+                            "halt": false,
+                            "lazy": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
