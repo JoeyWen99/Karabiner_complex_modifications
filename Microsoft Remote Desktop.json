@@ -2,7 +2,7 @@
     "title": "Swap Left Control/Command only in Remote",
     "rules": [
         {
-            "description": "Remote Right Command to Control",
+            "description": "Remote Right Command to Control, 在 window 中 cmd 键映射到 ctrl",
             "manipulators": [
                 {
                     "type": "basic",
@@ -26,7 +26,7 @@
             ]
         },
         {
-            "description": "Remote Left Command to Control",
+            "description": "Remote Left cmd to ctrl, 在 window 中 cmd 键映射到 ctrl",
             "manipulators": [
                 {
                     "type": "basic",
@@ -50,12 +50,12 @@
             ]
         },
         {
-            "description": "Remote Left Control to Command",
+            "description": "Remote Left opt to cmd, 在 window 中 opt 键映射到 win",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "left_control"
+                        "key_code": "left_option"
                     },
                     "to": [
                         {
@@ -74,7 +74,31 @@
             ]
         },
         {
-            "description": "Remote left_shift to left_shift",
+            "description": "Remote Left ctrl to opt, 在 window 中 ctrl 键映射到 alt",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_option"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.macos"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Remote left_shift to left_shift,为了使切换输入法在 remote 中不影响 mac",
             "manipulators": [
                 {
                     "type": "basic",
